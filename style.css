@@ -1,0 +1,13 @@
+.wrapper{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tabs-list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+.tabs-item {
+    padding: 10px;
+}
