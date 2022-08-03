@@ -1,36 +1,25 @@
 const tab = document.querySelectorAll('.tab-item')
-const tabContent = document.querySelectorAll('.tab-content')
+const content = document.querySelectorAll('.tab-content')
 
-function removeClassTab(){
-    tab.forEach((item) =>{
-        item.classList.remove('tab-active')
+function removeClass(){
+    tab.forEach((tabItem) =>{
+        tabItem.classList.remove('tab-active')
+    })
+    content.forEach((contentItem) =>{
+        contentItem.classList.remove('tab-content-active')
     })
 }
-function removeClassContentTab(){
-    tabContent.forEach((item) =>{
-        item.classList.remove('tab-content-active')
-    })
-}
-
-tab.forEach((item) =>{
-    item.addEventListener('click' , removeClassTab)
-})
-
-tab.forEach((item) => {
-    item.addEventListener('click' , removeClassContentTab)
-
-})
-
-
-tab.forEach((item) =>{
-    item.addEventListener('click' , () =>{
-    item.classList.add('tab-active')
-    })
-})
-
-tab.forEach((item) =>{
-    item.addEventListener('click' , (e) =>{
+function addClass(e){
+    const element = e.target
+    element.classList.add('tab-active')
     const id = e.target.dataset.id
-    tabContent[id].classList.add('tab-content-active')
-    })
+    content[id].classList.add('tab-content-active')
+}
+
+tab.forEach((item) =>{
+    item.addEventListener('click' , removeClass)
+})
+
+tab.forEach((item) =>{
+    item.addEventListener('click' , addClass)
 })
