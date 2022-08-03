@@ -3,10 +3,10 @@
     margin: 0;
     padding: 0;
 }
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
-/* font-family: 'Mochiy Pop One', sans-serif; */
 body{
     background-image: url(images/bg.png);
+    font-family: 'Montserrat', sans-serif;
+    
     
 }
 .wrapper{
@@ -22,8 +22,8 @@ body{
     list-style: none;
     margin-top: 20px;
     margin-bottom: 20px;
-    font-family: 'Mochiy Pop One';
     font-size: 20px;
+    font-weight: 600;
     
 }
 .tab-item {
@@ -88,10 +88,11 @@ body{
     
 }
 .tab-content h2{
-    /* font-family: 'Blaka', cursive; */
+    font-weight: 600;
+    font-size: 27px;
 }
-.tab-content ,img{
-    width: 100%;  
+.tab-content img{
+    width: 50%;  
  }
 .tab-content-active{
     animation-name: show-content;
