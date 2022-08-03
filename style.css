@@ -9,6 +9,7 @@ body{
 .wrapper{
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .tabs-list {
@@ -17,52 +18,85 @@ body{
     justify-content: space-between;
     list-style: none;
     margin-top: 20px;
+    margin-bottom: 20px;
     
 }
 .tab-item {
     padding: 10px 0;
     width: 30%;
-    border-radius: 5px 5px 0 0;
-    background-color: white;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
     text-align: center;
     position: relative;
-    
-
-}
-.tab-item::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 70px;
-    height: 3px;
-    background-color: red;
+    box-shadow: 0px 0px 9px 0px rgba(247,14,14,0.75);
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(247,14,14,0.75);
+    -moz-box-shadow: 0px 0px 9px 0px rgba(247,14,14,0.75);
     transition: 0.5s ease 0s;
 
+}
+.tab-item::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0.534);
+    border-radius: 5px;
+    transition: 0.5s ease 0s;
+}
+.tab-active{ 
+    box-shadow: 0px 0px 9px 0px rgba(33,14,247,0.75);
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(33,14,247,0.75);
+    -moz-box-shadow: 0px 0px 9px 0px rgba(33,14,247,0.75);
 }
 .tab-active::before{
     content: "";
     position: absolute;
+    left: 0;
     top: 0;
-    left: 70%;
-    width: 70px;
-    height: 3px;
-    transform: translateX(30%);
-    background-color: blue;
-
-}
-.tab-active{
-    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0.534);
+    border-radius: 5px;
 }
 
+.content-container{
+    position: relative; 
+}
 
 .tab-content{
     background-color: whitesmoke;
-    display: none;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
     padding: 10px 0;
-    border-radius: 0 0 5px 5px;
+    border-radius: 5px;
+    padding: 15px;
+    opacity: 0;
+    
     
 }
+.tab-content p ,h2 ,img{
+   margin-bottom: 20px;
+    
+}
+.tab-content ,img{
+    width: 100%;  
+ }
 .tab-content-active{
-    display: block;
+    animation-name: show-content;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes show-content{
+    0%{
+    }
+    100%{
+        left: 0;
+        opacity: 1  
+    }
 }
