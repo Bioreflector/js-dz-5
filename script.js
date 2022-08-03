@@ -18,6 +18,7 @@ tab.forEach((item) =>{
 
 tab.forEach((item) => {
     item.addEventListener('click' , removeClassContentTab)
+
 })
 
 
