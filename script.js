@@ -10,10 +10,14 @@ function removeClass(){
     })
 }
 function addClass(e){
-    const element = e.target
-    element.classList.add('tab-active')
-    const id = e.target.dataset.id
-    content[id].classList.add('tab-content-active')
+    const {target} = e
+    target.classList.add('tab-active')
+    const id = target.dataset.id
+    content.forEach((item) =>{
+        if(item.dataset.id === id){
+            item.classList.add('tab-content-active')
+        }
+    })
 }
 
 tab.forEach((item) =>{
